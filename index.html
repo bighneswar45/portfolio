@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bighneswar Pati | Web Developer</title>
+
+<style>
+
+body{
+font-family: Arial;
+background: linear-gradient(-45deg,#141e30,#243b55,#0072ff,#00c6ff);
+background-size:400% 400%;
+animation:bg 10s infinite;
+color:white;
+text-align:center;
+margin:0;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+header{
+padding:20px;
+}
+
+.profile{
+width:180px;
+height:180px;
+border-radius:50%;
+border:5px solid yellow;
+box-shadow:0 0 20px yellow;
+}
+
+.card{
+background:rgba(0,0,0,0.5);
+margin:20px auto;
+padding:20px;
+border-radius:15px;
+width:80%;
+max-width:400px;
+box-shadow:0 0 15px rgba(0,0,0,0.5);
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+box-shadow:0 0 20px yellow;
+}
+
+.social{
+width:60px;
+margin:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.social:hover{
+transform:scale(1.2);
+}
+
+#gameArea{
+width:300px;
+height:300px;
+background:white;
+margin:auto;
+position:relative;
+border-radius:10px;
+}
+
+#box{
+width:50px;
+height:50px;
+background:red;
+position:absolute;
+border-radius:10px;
+cursor:pointer;
+}
+
+footer{
+background:black;
+padding:15px;
+margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<img src="profile.jpg" class="profile">
+
+<h1>Bighneswar Pati</h1>
+
+<p>B.Tech (CSE) | Web Developer</p>
+
+</header>
+
+
+<div class="card">
+
+<h2>About Me</h2>
+
+<p>Hello! I am Bighneswar Pati, a passionate Web Developer.</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>My Skills</h2>
+
+<p>HTML ⭐⭐⭐⭐</p>
+<p>CSS ⭐⭐⭐⭐</p>
+<p>JavaScript ⭐⭐⭐</p>
+<p>Python ⭐⭐⭐⭐</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>Social Links</h2>
+
+<a href="https://www.instagram.com/_bighneswar_45/" target="_blank">
+<img src="instagram.png" class="social">
+</a>
+
+<a href="https://www.facebook.com/share/17zpYh2urB/" target="_blank">
+<img src="facebook.png" class="social">
+</a>
+
+</div>
+
+
+<div class="card">
+
+<h2>Game: Catch the Box 🎮</h2>
+
+<p>Score: <span id="score">0</span></p>
+
+<div id="gameArea">
+
+<div id="box" onclick="catchBox()"></div>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<p>© 2026 Bighneswar Pati | Web Developer</p>
+
+</footer>
+
+
+<script>
+
+let score=0;
+
+let box=document.getElementById("box");
+
+function moveBox(){
+
+let x=Math.random()*250;
+let y=Math.random()*250;
+
+box.style.left=x+"px";
+box.style.top=y+"px";
+
+}
+
+function catchBox(){
+
+score++;
+
+document.getElementById("score").innerText=score;
+
+moveBox();
+
+}
+
+setInterval(moveBox,2000);
+
+</script>
+
+</body>
+</html>
